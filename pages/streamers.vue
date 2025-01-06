@@ -11,8 +11,8 @@
           </div>
       </div>
       <iframe
-          :src="`https://player.twitch.tv/?channel=${actualStreamer}&parent=localhost`"
-          parent="localhost"
+          :src="`https://player.twitch.tv/?channel=${actualStreamer}&parent=gugustinette.github.io`"
+          parent="gugustinette.github.io"
           height="720"
           width="1280"
           frameborder="0"

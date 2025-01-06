@@ -1,16 +1,16 @@
 <template>
   <nav>
-      <NuxtLink to="/">
-          <NuxtImg src="/stream-for-humanity-logo.png" alt="Logo" />
-      </NuxtLink>
-      <ul>
-          <li>
-              <NuxtLink to="/">Accueil</NuxtLink>
-          </li>
-          <li>
-              <NuxtLink to="/streamers">Streamers</NuxtLink>
-          </li>
-      </ul>
+    <NuxtLink to="/">
+      <NuxtImg src="/stream-for-humanity-logo.png" alt="Logo" />
+    </NuxtLink>
+    <ul>
+      <li>
+        <NuxtLink to="/">Accueil</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/streamers">Streamers</NuxtLink>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -29,12 +29,27 @@ nav {
 
   img {
     height: 40px;
+    color: var(--color-font);
   }
 
   ul {
     display: flex;
     list-style: none;
     column-gap: 30px;
+    height: 100%;
+
+    li {
+      width: 100px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-decoration: none;
+        color: var(--color-font);
+      }
+    }
   }
 }
 </style>
