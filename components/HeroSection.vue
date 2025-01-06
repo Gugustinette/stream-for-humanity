@@ -1,9 +1,12 @@
 <template>
   <NuxtImg src="/assets/hero-background.png" class="hero-image hero-background" alt="Hero" />
+  <NuxtImg src="/assets/hero-front.png" class="hero-image hero-parallax hero-glow" alt="Hero" />
   <NuxtImg src="/assets/hero-front.png" class="hero-image hero-parallax hero-front" alt="Hero" />
   <NuxtImg src="/assets/hero-chat.png" class="hero-image hero-parallax hero-chat" alt="Hero" />
   <NuxtImg src="/assets/hero-enfant.png" class="hero-image hero-parallax hero-enfant" alt="Hero" />
   <div class="hero-transition"></div>
+  <div class="red-light"></div>
+  <div class="red-light red-light-2"></div>
   <FireParticles />
 </template>
 
@@ -17,7 +20,9 @@ const heroImages = ref<HTMLElement[]>([]);
 
 onMounted(() => {
   heroImages.value = Array.from(document.querySelectorAll('.hero-parallax'));
-  document.addEventListener('mousemove', handleMouseMove);
+  // Compute the parallax effect on mouse move on the most front image
+  const heroChatDom = document.querySelector('.hero-chat') as HTMLElement;
+  heroChatDom.addEventListener('mousemove', handleMouseMove);
 });
 
 const handleMouseMove = (event: MouseEvent) => {
@@ -33,7 +38,21 @@ const handleMouseMove = (event: MouseEvent) => {
     const distanceY = mouseY - imageCenterY;
 
     // Adjust the parallax effect strength
-    const parallaxFactor = 0.005;
+    let parallaxFactor = 0;
+    switch (image.className.split(' ')[2]) {
+      case 'hero-front':
+        parallaxFactor = 0.005;
+        break;
+      case 'hero-glow':
+        parallaxFactor = 0.005;
+        break;
+      case 'hero-chat':
+        parallaxFactor = 0.007;
+        break;
+      case 'hero-enfant':
+        parallaxFactor = 0.009;
+        break;
+    }
 
     image.style.transform = `translate(${distanceX * parallaxFactor}px, ${distanceY * parallaxFactor}px)`;
   });
@@ -41,6 +60,37 @@ const handleMouseMove = (event: MouseEvent) => {
 </script>
 
 <style lang="scss">
+// Red light background color animation
+@keyframes redLight {
+  0% {
+    background: #D83C24;
+  }
+  20% {
+    background: #D83C24;
+  }
+  30% {
+    background: #E1612B;
+  }
+  40% {
+    background: #D83C24;
+  }
+  50% {
+    background: #C15635;
+  }
+  80% {
+    background: #D83C24;
+  }
+  85% {
+    background: #E1612B;
+  }
+  90% {
+    background: #D83C24;
+  }
+  100% {
+    background: #D83C24;
+  }
+}
+
 .hero-image {
   width: 100vw;
   height: 100vh;
@@ -51,17 +101,52 @@ const handleMouseMove = (event: MouseEvent) => {
   position: absolute;
 }
 
-// Layering
-.hero-front {
-  z-index: 1;
+// Layers
+.hero-background {
+  filter: blur(2px);
 }
 
-.hero-chat {
-  z-index: 2;
+.hero-glow {
+  z-index: 1;
+  filter: blur(10px) saturate(150%) brightness(3);
+  margin-top: -1vh;
 }
 
 .hero-enfant {
+  width: 110vw;
+  height: 110vh;
+  margin-top: -4vh;
+  z-index: 1;
+}
+
+.hero-front {
+  z-index: 2;
+}
+
+.hero-chat {
   z-index: 3;
+}
+
+// Red light overlay
+.red-light {
+  position: absolute;
+  top: 50vh;
+  left: 100px;
+  width: 30vw;
+  height: 100px;
+  border-radius: 50%;
+  background: #D83C24;
+  animation: redLight 10s infinite;
+  filter: blur(100px);
+  z-index: 1;
+}
+.red-light-2 {
+  top: 50vh;
+  left: unset;
+  right: 100px;
+  width: 30vw;
+  height: 100px;
+  animation: redLight 10s infinite 2.5s;
 }
 
 // Hero transition overlay

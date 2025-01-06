@@ -81,5 +81,6 @@ const options = {
   left: 0;
   width: 100vw;
   height: 100vh;
+  filter: blur(2px);
 }
 </style>
