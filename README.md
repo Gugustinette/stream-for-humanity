@@ -10,9 +10,9 @@ Pour en savoir plus : [le compte Twitter d'Amine](https://x.com/AmineMaTue).
 
 Ceci n'est pas un site officiel, simplement un outil pour centraliser les informations.
 
-## Setup
+## Développement
 
-Make sure to install dependencies:
+Installation des dépendances :
 
 ```bash
 # npm
@@ -28,9 +28,7 @@ yarn install
 bun install
 ```
 
-## Développement
-
-Lancement du serveur local `http://localhost:3000`:
+Lancement du serveur local `http://localhost:3000` :
 
 ```bash
 # npm
