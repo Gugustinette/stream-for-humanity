@@ -1,5 +1,7 @@
 # Stream For Humanity
 
+![Stream For Humanity](./public/assets/stream-for-humanity-affiche.jpeg)
+
 Stream For Humanity est une initiative de streamers francophones mené par [AmineMaTue](https://x.com/AmineMaTue) pour soutenir les populations de la Palestine, du Congo, du Soudan et du Liban.
 
 Il s'agit d'une levée de fond en direct sur Twitch, qui commence le Vendredi 17 Janvier et se termine le Dimanche 19 Janvier.
