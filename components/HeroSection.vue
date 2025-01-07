@@ -5,8 +5,9 @@
   <NuxtImg src="/assets/hero-chat.png" class="hero-image hero-parallax hero-chat" alt="Hero" />
   <NuxtImg src="/assets/hero-enfant.png" class="hero-image hero-parallax hero-enfant" alt="Hero" />
   <div class="hero-transition"></div>
-  <div class="red-light"></div>
-  <div class="red-light red-light-2"></div>
+  <div class="light sun-light"></div>
+  <div class="light red-light"></div>
+  <div class="light red-light-2"></div>
   <FireParticles />
 </template>
 
@@ -41,16 +42,16 @@ const handleMouseMove = (event: MouseEvent) => {
     let parallaxFactor = 0;
     switch (image.className.split(' ')[2]) {
       case 'hero-front':
-        parallaxFactor = 0.005;
+        parallaxFactor = 0.01;
         break;
       case 'hero-glow':
-        parallaxFactor = 0.005;
+        parallaxFactor = 0.01;
         break;
       case 'hero-chat':
-        parallaxFactor = 0.007;
+        parallaxFactor = 0.02;
         break;
       case 'hero-enfant':
-        parallaxFactor = 0.009;
+        parallaxFactor = 0.03;
         break;
     }
 
@@ -60,7 +61,35 @@ const handleMouseMove = (event: MouseEvent) => {
 </script>
 
 <style lang="scss">
-// Red light background color animation
+@keyframes sunLight {
+  0% {
+    background: #FFFDEB;
+  }
+  20% {
+    background: #FFFDEB;
+  }
+  30% {
+    background: #FFFFFF;
+  }
+  40% {
+    background: #FFFDEB;
+  }
+  50% {
+    background: #FFFFFF;
+  }
+  80% {
+    background: #FFFDEB;
+  }
+  85% {
+    background: #FFFFFF;
+  }
+  90% {
+    background: #FFFDEB;
+  }
+  100% {
+    background: #FFFDEB;
+  }
+}
 @keyframes redLight {
   0% {
     background: #D83C24;
@@ -115,7 +144,7 @@ const handleMouseMove = (event: MouseEvent) => {
 .hero-enfant {
   width: 110vw;
   height: 110vh;
-  margin-top: -4vh;
+  margin-top: -3vh;
   z-index: 1;
 }
 
@@ -128,21 +157,33 @@ const handleMouseMove = (event: MouseEvent) => {
 }
 
 // Red light overlay
-.red-light {
+.light {
   position: absolute;
+  border-radius: 50%;
+  background: #FFFFFF;
+  filter: blur(100px);
+  z-index: 1;
+}
+.sun-light {
+  background: #FFFDEB;
+  top: -10vh;
+  left: 50vw;
+  width: 30vw;
+  height: 300px;
+  filter: blur(120px);
+  animation: sunLight 10s infinite;
+}
+.red-light {
+  background: #D83C24;
   top: 50vh;
   left: 100px;
   width: 30vw;
   height: 100px;
-  border-radius: 50%;
-  background: #D83C24;
   animation: redLight 10s infinite;
-  filter: blur(100px);
-  z-index: 1;
 }
 .red-light-2 {
+  background: #D83C24;
   top: 50vh;
-  left: unset;
   right: 100px;
   width: 30vw;
   height: 100px;
