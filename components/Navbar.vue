@@ -1,7 +1,7 @@
 <template>
   <nav>
     <NuxtLink to="/">
-      <NuxtImg src="/stream-for-humanity-logo.png" alt="Logo" />
+      <NuxtImg src="/stream-for-humanity/logo.png" alt="Logo" />
     </NuxtLink>
     <ul>
       <li>
@@ -24,11 +24,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 10px 30px;
   z-index: 100;
 
   img {
-    height: 40px;
+    height: 60px;
     color: var(--color-font);
   }
 

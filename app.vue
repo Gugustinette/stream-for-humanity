@@ -15,8 +15,7 @@ useHead({
 // SEO
 useSeoMeta({
   title: 'Stream For Humanity',
-  description: 'Stream For Humanity',
-  url: 'https://gugustinette.github.io/stream-for-humanity/',
+  description: 'Stream For Humanity'
 })
 </script>
 
