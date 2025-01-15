@@ -1,7 +1,7 @@
 <template>
   <nav>
     <NuxtLink to="/">
-      <NuxtImg src="/stream-for-humanity/logo.png" alt="Logo" />
+      <NuxtImg src="/assets/logo.png" alt="Logo" />
     </NuxtLink>
     <ul>
       <li>

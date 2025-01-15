@@ -7,5 +7,13 @@ export default defineNuxtConfig({
     '/streamers': {
       ssr: false
     }
-  }
+  },
+  app: {
+    baseURL: '/stream-for-humanity',
+  },
+  fonts: {
+    assets: {
+      prefix: "/stream-for-humanity/_fonts/",
+    }
+  },
 })
