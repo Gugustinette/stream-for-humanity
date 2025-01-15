@@ -10,7 +10,7 @@
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main {
   row-gap: 8rem;
   padding: 0 2rem;
