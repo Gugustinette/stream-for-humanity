@@ -9,11 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Container } from 'tsparticles-engine'
-
 const options = {
   fullScreen: {
-    enable: false
+    enable: true
   },
   background: {
     color: {

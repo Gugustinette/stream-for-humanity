@@ -34,6 +34,7 @@ body {
   padding: 0;
   background-color: var(--color-background);
   color: var(--color-font);
+  overflow-x: hidden;
 }
 
 a {

@@ -13,6 +13,7 @@
 <style lang="scss">
 main {
   row-gap: 8rem;
+  padding: 0 2rem;
 
   p {
     max-width: 800px;
