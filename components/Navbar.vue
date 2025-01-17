@@ -1,8 +1,5 @@
 <template>
   <nav>
-    <NuxtLink to="/">
-      <NuxtImg src="/assets/logo.png" alt="Logo" />
-    </NuxtLink>
     <ul>
       <li>
         <NuxtLink to="/">Accueil</NuxtLink>
@@ -22,7 +19,7 @@ nav {
   right: 0;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 10px 30px;
   z-index: 100;

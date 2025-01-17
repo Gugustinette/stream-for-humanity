@@ -56,6 +56,7 @@ main {
     row-gap: 10px;
     padding: 0 10px;
     overflow-y: auto;
+    min-width: 200px;
 
     .streamer-button {
       display: flex;
